@@ -1,11 +1,12 @@
 package model;
 
 public abstract class Rank {
+
+	private int posicao;
+	
 	public Rank(int posicao) {
 		this.setPosicao(posicao);
 	}
-
-	private int posicao;
 
 	// Getters e Setters
 	public int getPosicao() {

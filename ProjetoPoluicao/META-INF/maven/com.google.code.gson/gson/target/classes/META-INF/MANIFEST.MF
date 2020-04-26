@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1587429111247
+Bundle-ManifestVersion: 2
+Bundle-Name: Gson
+Bundle-SymbolicName: gson
+Bundle-Version: 2.8.6
+Created-By: 11.0.6 (Oracle Corporation)
+Tool: Bnd-4.0.0.201805111645

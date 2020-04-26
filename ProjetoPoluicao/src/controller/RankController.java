@@ -8,7 +8,7 @@ import java.util.Arrays;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import enums.Ranks;
+import enums.RankType;
 import model.Rank;
 import model.RankMorte;
 import model.RankPoluicao;
@@ -20,26 +20,26 @@ import util.Tables.RankTableModel;
 import view.RankForm;
 
 public class RankController {
-	private Ranks _rank;
+	private RankType rankType;
 
-	public RankController(Ranks rank) {
-		this._rank = rank;
+	public RankController(RankType rankType) {
+		this.rankType = rankType;
 	}
 
 	public String getTituloRank() {
-		return this._rank.getTitulo();
+		return this.rankType.getTitulo();
 	}
 
-	public JTable getTabela() {
+	public JTable getTabela() throws Exception {
 		LeitorArquivo leitor = new LeitorArquivo();
-		String json = "";
+		Rank rank=null;
 
-		switch (_rank) {
+		switch (rankType) {
 		case RANK_MORTE:
-			json = leitor.lerCSV("dadosMorte.csv");
+			rank =(RankMorte)leitor.lerCSV("/bin/assests/dadosMorte.csv");
 			break;
 		case RANK_POLUICAO:
-			json = leitor.lerCSV("dadosPoluicao.csv");
+			rank =(RankPoluicao)leitor.lerCSV("/bin/assests/dadosPoluicao.csv");
 			break;
 		}
 
@@ -59,25 +59,25 @@ public class RankController {
 		//ERRO: Não está inserindo a posição dos ranks
 		
 		//Parte que será retirada depois{
-		Rank rank=null;
-		switch (_rank) {
+		switch (rankType) {
 		case RANK_MORTE:
 			rank = new RankMorte(1, "Brasil", 20);
 			break;
 		case RANK_POLUICAO:
 			rank = new RankPoluicao(1, "São Paulo", 0);
 			break;
-		}
+		}		
 		tableModel.addRank(rank);
 		//}
 
+		
 		RankTable rankTable = new RankTable(tableModel);
 		return rankTable;
 	}
 
 	private RankTableModel getTableModel() {
 		RankTableModel rankTableModel = null;
-		switch (_rank) {
+		switch (rankType) {
 		case RANK_MORTE:
 			rankTableModel = new MorteTableModel();
 			break;
@@ -85,7 +85,7 @@ public class RankController {
 			rankTableModel = new PoluicaoTableModel();
 			break;
 		}
-
+		
 		return rankTableModel;
 	}
 

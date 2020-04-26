@@ -1,6 +1,9 @@
 package model;
 
+	
+
 public class RankMorte extends Rank {
+	
 	public RankMorte(int posicao,String pais, int mortes) {
 		super(posicao);
 		this.setPais(pais);

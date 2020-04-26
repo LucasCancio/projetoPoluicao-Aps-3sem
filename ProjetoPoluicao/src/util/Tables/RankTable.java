@@ -8,11 +8,6 @@ public class RankTable extends JTable {
 		super(rankTableModel);
 		this.createTable();
 	}
-	
-	/*public RankTable(RankTableModel rankTableModel) {
-		super(rankTableModel);
-		this.createTable();
-	}*/
 
 	public RankTable(Object[][] dados, Object[] colunas) {
 		super(dados, colunas);

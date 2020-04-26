@@ -1,25 +1,21 @@
 package view;
 
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import controller.IndexController;
-
-import javax.swing.JLabel;
-import java.awt.Font;
-
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import javax.swing.JFormattedTextField;
-import javax.swing.BoxLayout;
-import java.awt.GridLayout;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 
 public class IndexForm extends JFrame {
 	
@@ -91,7 +87,12 @@ public class IndexForm extends JFrame {
 		JButton button_1 = new JButton("Rank de Mortes");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				_indexController.abrirRankMorte();
+				try {
+					_indexController.abrirRankMorte();
+ 				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		button_1.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -104,7 +105,12 @@ public class IndexForm extends JFrame {
 		JButton button_2 = new JButton("Rank de Polui\u00E7\u00E3o");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				_indexController.abrirRankPoluicao();
+				try {
+					_indexController.abrirRankPoluicao();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		button_2.setFont(new Font("Tahoma", Font.BOLD, 14));

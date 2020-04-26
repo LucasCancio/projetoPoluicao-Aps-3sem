@@ -8,7 +8,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import controller.RankController;
-import enums.Ranks;
+import enums.RankType;
 
 import javax.swing.JTable;
 import javax.swing.JLabel;
@@ -26,13 +26,14 @@ public class RankForm extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws Exception 
 	 */
-	public RankForm(Ranks rank) {
+	public RankForm(RankType rankType) throws Exception {
 		setResizable(false);
-		_rankController= new RankController(rank);
+		_rankController= new RankController(rankType);
 		createFrame();
 	}
-	public void createFrame() {		
+	public void createFrame() throws Exception {		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 681, 372);
 		contentPane = new JPanel();

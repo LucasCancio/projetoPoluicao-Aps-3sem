@@ -1,6 +1,6 @@
 package controller;
 
-import enums.Ranks;
+import enums.RankType;
 import view.RankForm;
 import view.ResumoForm;
 import view.SolucaoForm;
@@ -11,13 +11,13 @@ public void abrirResumo() {
 	frmResumo.setVisible(true);
 }
 
-public void abrirRankPoluicao() {
-	RankForm frmRank = new RankForm(Ranks.RANK_POLUICAO);
+public void abrirRankPoluicao() throws Exception {
+	RankForm frmRank = new RankForm(RankType.RANK_POLUICAO);
 	frmRank.setVisible(true);
 }
 
-public void abrirRankMorte() {
-	RankForm frmRank = new RankForm(Ranks.RANK_MORTE);
+public void abrirRankMorte() throws Exception {
+	RankForm frmRank = new RankForm(RankType.RANK_MORTE);
 	frmRank.setVisible(true);
 }
 

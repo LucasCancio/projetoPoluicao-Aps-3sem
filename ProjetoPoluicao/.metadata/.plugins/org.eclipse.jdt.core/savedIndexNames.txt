@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\davi\Documents\UNIP\3º Semestre\APS\projetoPoluicao-Aps-3sem-master\ProjetoPoluicao\.metadata\.plugins\org.eclipse.jdt.core
+2213082963.index
+2103231971.index

@@ -21,14 +21,14 @@ public class MorteTableModel extends RankTableModel {
 	@Override
 	public void setColunas() {
 		super.setColunas();
-		super.colunas.add("Pais");
-		super.colunas.add("Mortes");		
+		super.colunas.add("País");
+		super.colunas.add("Qtde por cada 100 mil habitantes");		
 	}
 
 	public void setValueAt(RankMorte aValue, int rowIndex) {
 		super.setValueAt(aValue, rowIndex);
 		RankMorte rank = (RankMorte) ranks.get(rowIndex);
-
+		
 		rank.setPais(aValue.getPais());
 		rank.setMortes(aValue.getMortes());
 		
@@ -40,7 +40,7 @@ public class MorteTableModel extends RankTableModel {
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		RankMorte rank = (RankMorte) ranks.get(rowIndex);
-
+		
 		switch (columnIndex) {
 		case 1:
 			rank.setPais(aValue.toString());		
@@ -50,9 +50,10 @@ public class MorteTableModel extends RankTableModel {
 		default:
 			super.setValueAt(aValue, rowIndex, columnIndex);
 		}
-		fireTableCellUpdated(rowIndex, columnIndex);
+		//fireTableCellUpdated(rowIndex, columnIndex);
 	}
-
+	
+	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		RankMorte rankselecionado = (RankMorte) ranks.get(rowIndex);
 		Object valueObject = null;

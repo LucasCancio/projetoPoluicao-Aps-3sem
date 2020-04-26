@@ -6,11 +6,10 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 import model.Rank;
+import model.RankMorte;
 
 public abstract class RankTableModel extends AbstractTableModel {
 	
-	
-
 	protected List<Rank> ranks;
 	protected ArrayList<String> colunas;
 
@@ -46,15 +45,12 @@ public abstract class RankTableModel extends AbstractTableModel {
 		Rank rank = ranks.get(rowIndex);
 
 		rank.setPosicao(aValue.getPosicao());
-
-		fireTableCellUpdated(rowIndex, 0);
-
 	}
 
-	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		Rank rank = ranks.get(rowIndex);
 
+		
 		switch (columnIndex) {
 		case 0:
 			rank.setPosicao(Integer.parseInt(aValue.toString()));
@@ -62,7 +58,6 @@ public abstract class RankTableModel extends AbstractTableModel {
 		default:
 			System.err.println("Índice da coluna inválido");
 		}
-		fireTableCellUpdated(rowIndex, columnIndex);
 	}
 
 	public Object getValueAt(int rowIndex, int columnIndex) {
