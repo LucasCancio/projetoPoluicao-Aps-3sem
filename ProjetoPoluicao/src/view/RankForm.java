@@ -42,7 +42,6 @@ public class RankForm extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		
 		tbRank = _rankController.getTabela();
 		tbRank.setVisible(true);
         JScrollPane scroll = new JScrollPane();

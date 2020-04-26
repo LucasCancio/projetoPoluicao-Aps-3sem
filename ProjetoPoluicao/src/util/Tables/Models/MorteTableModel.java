@@ -1,4 +1,4 @@
-package util.Tables;
+package util.Tables.Models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +40,7 @@ public class MorteTableModel extends RankTableModel {
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		RankMorte rank = (RankMorte) ranks.get(rowIndex);
-		
+
 		switch (columnIndex) {
 		case 1:
 			rank.setPais(aValue.toString());		
@@ -50,7 +50,7 @@ public class MorteTableModel extends RankTableModel {
 		default:
 			super.setValueAt(aValue, rowIndex, columnIndex);
 		}
-		//fireTableCellUpdated(rowIndex, columnIndex);
+		fireTableCellUpdated(rowIndex, columnIndex);
 	}
 	
 	@Override
@@ -59,13 +59,13 @@ public class MorteTableModel extends RankTableModel {
 		Object valueObject = null;
 		switch (columnIndex) {
 		case 1:
-			valueObject = rankselecionado.getPais();			
+			valueObject = rankselecionado.getPais();
 			break;
 		case 2:
 			valueObject = rankselecionado.getMortes();
 			break;
 		default:
-			super.getValueAt(rowIndex, columnIndex);
+			valueObject = super.getValueAt(rowIndex, columnIndex);
 		}
 
 		return valueObject;

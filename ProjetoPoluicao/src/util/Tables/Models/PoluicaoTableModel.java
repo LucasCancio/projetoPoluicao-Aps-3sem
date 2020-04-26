@@ -1,4 +1,4 @@
-package util.Tables;
+package util.Tables.Models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,14 +20,16 @@ public class PoluicaoTableModel extends RankTableModel {
 	@Override
 	public void setColunas() {
 		super.setColunas();
+		//super.colunas.add("Rank");
 		super.colunas.add("País");
-		super.colunas.add("CO2(Toneladas)");		
+		super.colunas.add("CO2(Toneladas/Milhões)");		
 	}
 
 	public void setValueAt(RankPoluicao aValue, int rowIndex) {
 		super.setValueAt(aValue, rowIndex);
 		RankPoluicao rank = (RankPoluicao) ranks.get(rowIndex);
 
+		rank.setPosicao(aValue.getPosicao());
 		rank.setCidade(aValue.getCidade());
 		rank.setPoluicao(aValue.getPoluicao());	
 
@@ -44,7 +46,7 @@ public class PoluicaoTableModel extends RankTableModel {
 		case 1:
 			rank.setCidade(aValue.toString());		
 		case 2:
-			rank.setPoluicao(Float.parseFloat(aValue.toString()));
+			rank.setPoluicao(Integer.parseInt(aValue.toString()));
 
 		default:
 			super.setValueAt(aValue, rowIndex, columnIndex);
@@ -58,13 +60,13 @@ public class PoluicaoTableModel extends RankTableModel {
 		Object valueObject = null;
 		switch (columnIndex) {
 		case 1:
-			valueObject = rankselecionado.getCidade();			
+			valueObject = rankselecionado.getCidade();
 			break;
 		case 2:
 			valueObject = rankselecionado.getPoluicao();
 			break;
 		default:
-			super.getValueAt(rowIndex, columnIndex);
+			valueObject = super.getValueAt(rowIndex, columnIndex);
 		}
 
 		return valueObject;

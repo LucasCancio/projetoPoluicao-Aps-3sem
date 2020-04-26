@@ -1,14 +1,14 @@
 package model;
 
 public class RankPoluicao extends Rank {
-	public RankPoluicao(int posicao,String cidade,float poluicao) {
+	public RankPoluicao(int posicao,String cidade,int poluicao) {
 		super(posicao);
 		this.setCidade(cidade);
 		this.setPoluicao(poluicao);
 	}
 	
 	public String cidade;
-	public float poluicao;
+	public int poluicao;
 	
 	//Getters e Setters
 	public String getCidade() {
@@ -17,10 +17,10 @@ public class RankPoluicao extends Rank {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-	public float getPoluicao() {
+	public int getPoluicao() {
 		return poluicao;
 	}
-	public void setPoluicao(float poluicao) {
+	public void setPoluicao(int poluicao) {
 		this.poluicao = poluicao;
 	}
 }
