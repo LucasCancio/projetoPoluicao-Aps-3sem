@@ -17,9 +17,9 @@ de um efeito com proporções globais e pouco saudáveis para o planeta e para a
 A poluição faz parte da sociedade moderna, todos os países querem estar na vanguarda da tecnologia, principalmente os mais desenvolvidos 
 ou com economias emergentes. Basta dizer que seis países do G8 constam desta lista dos 10 países mais poluidores.
 
-O objetivo do software, é informar o usuário sobre a Poluição Atmosférica no planeta, de forma que ele veja um resumo sobre o tema, 
-estatísticas de mortes e níveis de co², e também tente conscientizar com possíveis soluções Tudo isso foi feito em Java,
-usando o JFrame (Componente do Java Swing), com o foco total no uso do *paradigma orientado a objetos*
+O objetivo do software, é informar o usuário sobre a Poluição Atmosférica no planeta, de forma que o usuário veja um resumo sobre o tema, 
+estatísticas de mortes e níveis de co², e também seja conscientizado com possíveis soluções sobre o tema.
+Tudo isso foi feito em Java, usando o JFrame (Componente da biblioteca Java Swing), com o foco total no uso do *paradigma orientado a objetos*
 
 
 
